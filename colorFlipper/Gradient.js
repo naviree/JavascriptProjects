@@ -1,6 +1,10 @@
 const btn = document.getElementById("btn");
 const color = document.querySelector(".color");
 
+document.addEventListener("DOMContentLoaded", () => {
+	setRandomGradient();
+});
+
 // this is where the logic for clicking the button would be
 btn.addEventListener("click", () => {
 	const hexCode1 = getRandomHexCode();
