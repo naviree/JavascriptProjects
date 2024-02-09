@@ -4,6 +4,7 @@ const color = document.querySelector(".color");
 // this is where the logic for clicking the button would be
 btn.addEventListener("click", () => {
 	document.body.style.background = getRandomHexCode();
+	console.log(getRandomHexCode());
 	color.textContent = getRandomHexCode();
 });
 
