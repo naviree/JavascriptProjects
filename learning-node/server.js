@@ -1,34 +1,21 @@
-const http = require("http");
-const fs = require("fs");
-const _ = require("lodash");
+const express = require("express");
+const mongoose = require("mongoose");
+const app = express();
 
-const server = http.createServer((req, res) => {
-	// lodash
-	const num = _.random(0, 20);
-	console.log(num);
+const uri =
+	"mongodb+srv://jelly:1234@jun.6xgkvde.mongodb.net/test?retryWrites=true&w=majority";
 
-	const greet = _.once(() => {
-		console.log("hello");
-	});
+async function connect(uri) {
+	try {
+		await mongoose.connect(uri); // Fix the typo here (use uri instead of url)
+		console.log("connected to MongoDB");
+	} catch (error) {
+		console.log(error);
+	}
+}
 
-	greet();
+connect(uri); // Pass the uri to the connect function
 
-	// set header cotent type
-	res.setHeader("Content-Type", "text/html");
-
-	let path = "./views";
-
-	// send an html file
-	fs.readFile("./views/index.html", (err, data) => {
-		if (err) {
-			console.log(err);
-		} else {
-			// res.write(data);
-			res.end(data);
-		}
-	});
-});
-
-server.listen(3000, "localhost", () => {
-	console.log("listening for requests on port 3000");
+app.listen(8001, () => {
+	console.log("Server started on port 8001");
 });
