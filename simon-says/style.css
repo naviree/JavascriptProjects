@@ -8,12 +8,20 @@ body {
 	height: 100vh;
 }
 
+h1 {
+	text-align: center;
+	margin: 20px 0;
+}
+
 .wrapper {
-	height: 100vh;
+	height: 50vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	background-color: #f0f0f0;
+}
+.wrapper button {
+	padding: 10px 20px;
 }
 
 .simon-container {
