@@ -4,6 +4,7 @@ const yellow = document.getElementById("#yellow");
 const blue = document.getElementById("#blue");
 const startButton = document.querySelector(".start");
 
+
 // create startGame function
 function startGame() {
 	startButton.classList.add("hidden");
@@ -18,10 +19,7 @@ function displaySequence() {
 
 	const squares = [green, red, yellow, blue];
 
-	for (let i = 0; i < 4; i++) {
-		sequence.push(squares[Math.floor(Math.random() * squares.length)]);
-		const randomSquare = sequence[i];
-		sequence.push(randomSquare);
+	for (let i = 0; i < squares.length; i++) {
+
 	}	
-	console.log(randomSquare);
 }
